@@ -74,4 +74,10 @@ public class ApiClient {
         call.enqueue(callback);
         return call;
     }
+
+    public Call<Result<Device>> addDevice(Device device, Callback<Result<Device>> callback) {
+        Call<Result<Device>> call = this.service.addDevice(device);
+        call.enqueue(callback);
+        return call;
+    }
 }

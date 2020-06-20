@@ -51,6 +51,7 @@ public class FragmentHome extends Fragment {
 
         resultTextView = vista.findViewById(R.id.result);
 
+
         createRoomButton= (Button) vista.findViewById(R.id.create_room);
         if (createRoomButton != null) {
             createRoomButton.setOnClickListener(v -> createRoom());

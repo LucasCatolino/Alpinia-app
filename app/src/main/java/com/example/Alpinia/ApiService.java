@@ -29,4 +29,8 @@ public interface ApiService {
 
     @GET("rooms")
     Call<Result<List<Room>>> getRooms();
+
+    @POST("devices")
+    @Headers("Content-Type: application/json")
+    Call<Result<Device>> addDevice(@Body Device device);
 }
