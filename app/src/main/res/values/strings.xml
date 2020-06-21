@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">BottomNavigation</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_routines">Routines</string>
+    <string name="title_rooms">Rooms</string>
+    <string name="title_devices">Devices</string>
+
+    <string name="status_on">On</string>
+    <string name="status_off">Off</string>
+    <string name="status_open">Open</string>
+    <string name="status_close">Close</string>
+    <string name="status_opening">Opening</string>
+    <string name="status_closing">Closing</string>
+    <string name="status_playing">Playing</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_locked">Locked</string>
+    <string name="status_unlocked">Unlocked</string>
+
     <string name="create_room">Create Room</string>
     <string name="modify_room">Update Room</string>
     <string name="delete_room">Delete Room</string>
