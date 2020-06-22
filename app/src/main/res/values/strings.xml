@@ -40,6 +40,21 @@
         <item>Rock</item>
     </string-array>
 
+    <!-- Horno -->
+    <string name="status_temperature">Oven´s Temperature</string>
+    <string name="set_temperature">Set Temperature</string>
+    <string name="set_grill_mode">Set Grill Mode</string>
+    <string name="set_convection_mode">Set Convection Mode</string>
+    <string name="set_heat_source">Set Heat Source</string>
+    <string-array name="modo_grill">
+        <item>Apagado</item>
+        <item>Economico</item>
+        <item>Completo</item>
+    </string-array>
+
+
+
+
 
 
 
