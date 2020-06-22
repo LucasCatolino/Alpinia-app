@@ -1,9 +1,11 @@
 package com.example.Alpinia;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,7 +40,13 @@ public class HomesActivity extends AppCompatActivity {
         newHomeName = findViewById(R.id.newHome);
         recyclerView = findViewById(R.id.homeList);
         if (addHomeBttn != null) {
-            addHomeBttn.setOnClickListener(v -> createHome());
+            addHomeBttn.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    createHome();
+                    getHomes();
+                }
+            });
         }
         getHomes();
         if(homesList != null){
@@ -48,7 +56,7 @@ public class HomesActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(this));}
     }
 
-    private void getHomes() {
+    public void getHomes() {
         ApiClient.getInstance().getHomes(new Callback<Result<List<Home>>>() {
             @Override
             public void onResponse(@NonNull Call<Result<List<Home>>> call, @NonNull Response<Result<List<Home>>> response) {
