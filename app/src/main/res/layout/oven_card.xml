@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/OvenImageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/oven_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="156dp"
+                android:src="@drawable/ic_oven" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_temperature"
+                    android:textAlignment="center" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_circle" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:id="@+id/OventTemperatureView"
+                        android:text="0"
+                        android:textColor="@color/dark"
+                        android:textSize="25sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/OvenTemperatureTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/set_temperature"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/OvenImageLayout" />
+
+        <SeekBar
+            android:id="@+id/OvenTemperatureSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:max="140"
+            android:progress="40"
+            app:layout_constraintLeft_toRightOf="@id/OvenTemperatureTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/OvenTemperatureTitle" />
+
+
+        <TextView
+            android:id="@+id/OvenGrillTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_grill_mode"
+            app:layout_constraintTop_toBottomOf="@+id/OvenTemperatureTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+
+            />
+
+        <Spinner
+            android:id="@+id/OvenGrillDDL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/OvenGrillTitle"
+            app:layout_constraintTop_toTopOf="@id/OvenGrillTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:entries="@array/grill_mode_options" />
+
+
+        <TextView
+            android:id="@+id/OvenHeatSourceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_heat_source"
+            app:layout_constraintTop_toBottomOf="@+id/OvenGrillTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+
+            />
+
+        <Spinner
+            android:id="@+id/OvenHeatSourceDDL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/OvenHeatSourceTitle"
+            app:layout_constraintTop_toTopOf="@id/OvenHeatSourceTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:entries="@array/heat_source_options" />
+
+        <TextView
+            android:id="@+id/OvenConvectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_convection_mode"
+            app:layout_constraintTop_toBottomOf="@+id/OvenHeatSourceTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+
+            />
+
+        <Spinner
+            android:id="@+id/OvenConvectionDDL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/OvenConvectionTitle"
+            app:layout_constraintTop_toTopOf="@id/OvenConvectionTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:entries="@array/convection_mode_options" />
+
+        <Switch
+            android:id="@+id/oven_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/OvenTemperatureSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/OvenImageLayout"
+            app:layout_constraintVertical_bias="0.845" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
