@@ -15,6 +15,10 @@ public class Home {
     @Expose
     private Meta meta;
 
+    public Home(String name) {
+        this.name = name;
+    }
+
     public String getId() {
         return id;
     }

@@ -37,10 +37,12 @@ public class HomesActivity extends AppCompatActivity {
         addHomeBttn = findViewById(R.id.btnAddHome);
         newHomeName = findViewById(R.id.newHome);
         recyclerView = findViewById(R.id.homeList);
+        if (addHomeBttn != null) {
+            addHomeBttn.setOnClickListener(v -> createHome());
+        }
         getHomes();
         if(homesList != null){
-            //Toast.makeText(this,"YAY",Toast.LENGTH_LONG ).show();
-            Toast.makeText(this ,homesList.toString(),Toast.LENGTH_LONG);
+            Toast.makeText(this,"YAY",Toast.LENGTH_LONG ).show();
             HomesAdapter myAdapter = new HomesAdapter(this,homesList);
             recyclerView.setAdapter(myAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));}
@@ -64,6 +66,30 @@ public class HomesActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void createHome() {
+        Toast.makeText(this, "Creating Home", Toast.LENGTH_LONG).show();
+        Home home = new Home(newHomeName.getText().toString());
+        ApiClient.getInstance().addHome(home, new Callback<Result<Home>>() {
+            @Override
+            public void onResponse(@NonNull Call<Result<Home>> call, @NonNull Response<Result<Home>> response) {
+                if (response.isSuccessful()) {
+                    Result<Home> result = response.body();
+                    if (result != null) {
+                        home.setId(result.getResult().getId());
+                    }
+                } else {
+                    handleError(response);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Result<Home>> call, @NonNull Throwable t) {
+                handleUnexpectedError(t);
+            }
+        });
+    }
+
 
     private <T> void handleError(Response<T> response) {
         Error error = ApiClient.getInstance().getError(response.errorBody());

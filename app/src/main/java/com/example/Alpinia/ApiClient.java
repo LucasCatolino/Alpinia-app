@@ -87,5 +87,12 @@ public class ApiClient {
         return call;
     }
 
+    public Call<Result<Home>> addHome(Home home, Callback<Result<Home>> callback) {
+        Call<Result<Home>> call = this.service.addHome(home);
+        call.enqueue(callback);
+        return call;
+    }
+
+
 
 }
