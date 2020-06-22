@@ -62,10 +62,44 @@
         <item>Up</item>
     </string-array>
 
+    <!-- Air Conditioner -->
+    <string name="status_temperature_ac">Air Conditioner`s Temperature</string>
+    <string name="set_temperature_ac">Set Temperature</string>
+    <string name="cold_mode">Cold</string>
+    <string name="fan_mode">Fan</string>
+    <string name="heat_mode">Heat</string>
+    <string name="fan_speed">Fan Speed</string>
+    <string name="horizontal_mov">Horizontal Movements</string>
+    <string name="vertical_mov">Vertical Movements</string>
+    <string-array name="fan_speed_options">
+        <item> Automatic </item>
+        <item> 25 % </item>
+        <item> 50 % </item>
+        <item> 75 % </item>
+        <item> 100 % </item>
+    </string-array>
+    <string-array name="vertical_movs_options">
+        <item> Automatic </item>
+        <item> 22 degrees </item>
+        <item> 45 degrees </item>
+        <item> 67 degrees </item>
+        <item> 90 degrees </item>
+    </string-array>
+    <string-array name="horizontal_movs_options">
+        <item> Automatic </item>
+        <item> -90 degrees </item>
+        <item> -45 degrees </item>
+        <item> 0 degrees </item>
+        <item> 45 degrees </item>
+        <item> 90 degrees </item>
+    </string-array>
 
 
 
 
+
+
+    <string name="device_mode">Mode</string>
 
 
 
