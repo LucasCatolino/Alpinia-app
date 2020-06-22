@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.List;
 
+import com.example.Alpinia.devices.Device;
+import com.example.Alpinia.devices.DeviceState;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,6 +48,8 @@ public class ApiClient {
         }
     }
 
+    //---------------- ROOMS MANAGMENTS ----------------------------------
+
     public Call<Result<Room>> addRoom(Room room, Callback<Result<Room>> callback) {
         Call<Result<Room>> call = this.service.addRoom(room);
         call.enqueue(callback);
@@ -75,9 +80,31 @@ public class ApiClient {
         return call;
     }
 
+
+    //------------------------ DEVICES MANAGMENT -----------------------------------
+
     public Call<Result<Device>> addDevice(Device device, Callback<Result<Device>> callback) {
         Call<Result<Device>> call = this.service.addDevice(device);
         call.enqueue(callback);
         return call;
     }
+
+    public Call<Result<List<Device>>> getDevices(Callback<Result<List<Device>>> callback) {
+        Call<Result<List<Device>>> call = this.service.getDevices();
+        call.enqueue(callback);
+        return call;
+    }
+
+    public Call<Result<DeviceState>> getDeviceState(String deviceId, Callback<Result<DeviceState>> callback) {
+        Call<Result<DeviceState>> call = this.service.getDeviceState(deviceId);
+        call.enqueue(callback);
+        return call;
+    }
+
+    public Call<Result<Boolean>> deleteDevice(String deviceId, Callback<Result<Boolean>> callback) {
+        Call<Result<Boolean>> call = this.service.deleteDevice(deviceId);
+        call.enqueue(callback);
+        return call;
+    }
+
 }

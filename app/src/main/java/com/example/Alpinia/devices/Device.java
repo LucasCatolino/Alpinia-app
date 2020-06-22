@@ -1,5 +1,8 @@
-package com.example.Alpinia;
+package com.example.Alpinia.devices;
 
+import com.example.Alpinia.Meta;
+import com.example.Alpinia.State;
+import com.example.Alpinia.Type;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,10 +13,10 @@ public class Device {
     private String id;
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("type")
     @Expose
-    private Type type;
+    protected DeviceType type;
     @SerializedName("state")
     @Expose
     private State state;
@@ -21,17 +24,23 @@ public class Device {
     @Expose
     private Meta meta;
 
-    public Device(String name, Type type){
+
+    public Device(String name, DeviceType type){
         this.name = name;
         this.type = type;
         this.meta = null;
     }
-    public Device(String name, Type type, State state){
+    public Device(String name, DeviceType type, State state){
         this.name = name;
         this.type = type;
         this.state = state;
         this.meta = null;
     }
+
+    public Device() {}
+
+
+
 
     public String getId() {
         return id;
@@ -49,11 +58,11 @@ public class Device {
         this.name = name;
     }
 
-    public Type getType() {
+    public DeviceType getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(DeviceType type) {
         this.type = type;
     }
 
