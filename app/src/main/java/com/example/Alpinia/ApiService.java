@@ -13,6 +13,25 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
+    // HOMES
+    @POST("homes")
+    @Headers("Content-Type: application/json")
+    Call<Result<Home>> addHome(@Body Home home);
+
+    @PUT("homes/{homeId}")
+    @Headers("Content-Type: application/json")
+    Call<Result<Boolean>> modifyRoom(@Path("homesId") String homeId, @Body Home home);
+
+    @DELETE("homes/{homeId}")
+    Call<Result<Boolean>> deleteHome(@Path("homeId") String homeId);
+
+    @GET("homes/{homeId}")
+    Call<Result<Room>> getHome(@Path("homeId") String homeId);
+
+    @GET("homes")
+    Call<Result<List<Home>>> getHomes();
+
+    //ROOMS
     @POST("rooms")
     @Headers("Content-Type: application/json")
     Call<Result<Room>> addRoom(@Body Room room);
@@ -30,7 +49,9 @@ public interface ApiService {
     @GET("rooms")
     Call<Result<List<Room>>> getRooms();
 
+    //DEVICES
     @POST("devices")
     @Headers("Content-Type: application/json")
     Call<Result<Device>> addDevice(@Body Device device);
+
 }

@@ -3,6 +3,8 @@ package com.example.Alpinia;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Room {
 
     @SerializedName("id")
@@ -14,6 +16,11 @@ public class Room {
     @SerializedName("meta")
     @Expose
     private RoomMeta meta;
+
+    @SerializedName("devices")
+    @Expose
+    private List<Device> deviceList;
+
 
     public Room() {
     }

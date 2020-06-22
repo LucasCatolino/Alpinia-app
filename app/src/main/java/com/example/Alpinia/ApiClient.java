@@ -80,4 +80,12 @@ public class ApiClient {
         call.enqueue(callback);
         return call;
     }
+
+    public Call<Result<List<Home>>> getHomes(Callback<Result<List<Home>>> callback) {
+        Call<Result<List<Home>>> call = this.service.getHomes();
+        call.enqueue(callback);
+        return call;
+    }
+
+
 }

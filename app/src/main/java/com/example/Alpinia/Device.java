@@ -73,4 +73,14 @@ public class Device {
         this.meta = meta;
     }
 
+    @Override
+    public String toString() {
+        return "Device{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", state=" + state +
+                ", meta=" + meta +
+                '}';
+    }
 }
