@@ -94,6 +94,14 @@
         <item> 90 degrees </item>
     </string-array>
 
+    <!-- Door -->
+
+    <string name="door_title">Door</string>
+    <string name="door_open">Open</string>
+    <string name="door_close">Close</string>
+    <string name="door_block">Lock</string>
+    <string name="door_unblock">Unlock</string>
+
 
 
 
