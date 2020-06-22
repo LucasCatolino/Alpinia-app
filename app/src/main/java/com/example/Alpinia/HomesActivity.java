@@ -1,5 +1,6 @@
 package com.example.Alpinia;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -29,6 +30,7 @@ import static java.lang.Thread.sleep;
 public class HomesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<Home> homesList;
+    Context context = this;
 
     Button addHomeBttn;
     EditText newHomeName;
@@ -49,11 +51,7 @@ public class HomesActivity extends AppCompatActivity {
             });
         }
         getHomes();
-        if(homesList != null){
-            Toast.makeText(this,"YAY",Toast.LENGTH_LONG ).show();
-            HomesAdapter myAdapter = new HomesAdapter(this,homesList);
-            recyclerView.setAdapter(myAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));}
+
     }
 
     public void getHomes() {
@@ -62,7 +60,14 @@ public class HomesActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<Result<List<Home>>> call, @NonNull Response<Result<List<Home>>> response) {
                 if (response.isSuccessful()) {
                     Result<List<Home>> result = response.body();
+                    System.out.println(result.getResult().toString());
                     homesList = result.getResult();
+                    System.out.println(homesList.toString());
+                    if(homesList != null){
+                        HomesAdapter myAdapter = new HomesAdapter(context,homesList);
+                        recyclerView.setAdapter(myAdapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));}
+                    //homesList.addAll(result.getResult());
                 } else {
                     handleError(response);
                 }
