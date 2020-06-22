@@ -46,11 +46,23 @@
     <string name="set_grill_mode">Set Grill Mode</string>
     <string name="set_convection_mode">Set Convection Mode</string>
     <string name="set_heat_source">Set Heat Source</string>
-    <string-array name="modo_grill">
-        <item>Apagado</item>
-        <item>Economico</item>
-        <item>Completo</item>
+    <string-array name="grill_mode_options">
+        <item>Off</item>
+        <item>Economic</item>
+        <item>Complete</item>
     </string-array>
+    <string-array name="convection_mode_options">
+        <item>Off</item>
+        <item>Economic</item>
+        <item>Conventional</item>
+    </string-array>
+    <string-array name="heat_source_options">
+        <item>Conventional</item>
+        <item>Down</item>
+        <item>Up</item>
+    </string-array>
+
+
 
 
 
