@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.List;
 
-import com.example.Alpinia.devices.Device;
-import com.example.Alpinia.devices.DeviceState;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -84,7 +81,7 @@ public class ApiClient {
     //------------------------ DEVICES MANAGMENT -----------------------------------
 
     public Call<Result<Device>> addDevice(Device device, Callback<Result<Device>> callback) {
-        Call<Result<Device>> call = this.service.addDevice(device);
+        Call<Result<List<Device>>> call = this.service.addDevice(device);
         call.enqueue(callback);
         return call;
     }

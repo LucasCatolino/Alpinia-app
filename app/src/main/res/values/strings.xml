@@ -102,6 +102,28 @@
     <string name="door_block">Lock</string>
     <string name="door_unblock">Unlock</string>
 
+    <!-- Faucet -->
+    <string name="faucet_title">Faucet</string>
+    <string name="faucet_open">Open</string>
+    <string name="faucet_close">Close</string>
+    <string-array name="units">
+        <item>ml</item>
+        <item>cl</item>
+        <item>dl</item>
+        <item>l</item>
+        <item>dal</item>
+        <item>hl</item>
+        <item>kl</item>
+    </string-array>
+
+
+    <string name="blind_title">Blind</string>
+    <string name="blind_open">Open</string>
+    <string name="blind_close">Close</string>
+    <string name="blind_position">Orientation:</string>
+
+
+
 
 
 

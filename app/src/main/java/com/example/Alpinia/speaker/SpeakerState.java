@@ -1,8 +1,9 @@
-package com.example.Alpinia.devices.speaker;
+package com.example.Alpinia.speaker;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import com.example.Alpinia.devices.DeviceState;
+import com.example.Alpinia.DeviceState;
 
 public class SpeakerState extends DeviceState {
     @SerializedName("status")

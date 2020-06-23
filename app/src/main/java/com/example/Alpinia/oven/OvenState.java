@@ -1,9 +1,9 @@
-package com.example.Alpinia.devices.oven;
+package com.example.Alpinia.oven;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import com.example.Alpinia.devices.DeviceState;
+import com.example.Alpinia.DeviceState;
 
 public class OvenState extends DeviceState {
 

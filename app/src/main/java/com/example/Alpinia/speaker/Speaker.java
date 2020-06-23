@@ -1,9 +1,11 @@
-package com.example.Alpinia.devices.speaker;
+package com.example.Alpinia.speaker;
+
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import com.example.Alpinia.devices.Device;
-import com.example.Alpinia.devices.DeviceType;
+import com.example.Alpinia.Device;
+import com.example.Alpinia.DeviceType;
 
 
 

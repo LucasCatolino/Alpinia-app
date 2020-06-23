@@ -2,9 +2,6 @@ package com.example.Alpinia;
 
 import java.util.List;
 
-import com.example.Alpinia.devices.Device;
-import com.example.Alpinia.devices.DeviceState;
-
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -40,7 +37,7 @@ public interface ApiService {
 
     @POST("devices")
     @Headers("Content-Type: application/json")
-    Call<Result<Device>> addDevice(@Body Device device);
+    Call<Result<List<Device>>>  addDevice(@Body Device device);
 
     @GET("devices")
     Call<Result<List<Device>>> getDevices();
