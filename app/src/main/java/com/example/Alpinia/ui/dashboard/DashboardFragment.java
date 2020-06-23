@@ -15,6 +15,9 @@ import androidx.fragment.app.Fragment;
 import com.example.Alpinia.ApiClient;
 import com.example.Alpinia.Error;
 
+import com.example.Alpinia.Lamp;
+import com.example.Alpinia.LampState;
+
 import com.example.Alpinia.R;
 import com.example.Alpinia.Result;
 import com.example.Alpinia.Type;
@@ -48,7 +51,7 @@ public class DashboardFragment extends Fragment {
 
     private void createDevice() {
         Toast.makeText(getContext(), "Creating Device", Toast.LENGTH_LONG).show();
-        lamp = new Device("jose",new Type("go46xmbqeomjrsjr"));
+        lamp = new Lamp("lamparsaa");
 
         ApiClient.getInstance().addDevice(lamp, new Callback<Result<Device>>() {
             @Override

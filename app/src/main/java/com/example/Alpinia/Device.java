@@ -54,4 +54,34 @@ public class Device {
         return type;
     }
 
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public Meta getMeta() {
+        return meta;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", state=" + state +
+                ", meta=" + meta +
+                '}';
+    }
 }

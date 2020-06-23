@@ -40,4 +40,12 @@ public class LampState extends State {
         this.brightness = brightness;
     }
 
+    @Override
+    public String toString() {
+        return "LampState{" +
+                "status='" + status + '\'' +
+                ", color='" + color + '\'' +
+                ", brightness=" + brightness +
+                '}';
+    }
 }
