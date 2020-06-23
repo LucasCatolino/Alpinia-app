@@ -1,7 +1,10 @@
 package com.example.Alpinia;
 
+import com.example.Alpinia.faucet.FaucetState;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -105,3 +108,27 @@ public class ApiClient {
     }
 
 }
+
+
+
+
+    public Call<Result<FaucetState>> getFaucetState(String deviceId, Callback<Result<FaucetState>> callback) {
+        Call<Result<FaucetState>> call = this.service.getFaucetState(deviceId);
+        call.enqueue(callback);
+        return call;
+    }
+
+    public Call<Result<Boolean>> openFaucet(String deviceId, Callback<Result<Boolean>> callback) {
+        Call<Result<Boolean>> call = this.service.openOrCloseFaucet(deviceId, "open");
+        call.enqueue(callback);
+        return call;
+    }
+
+    public Call<Result<Boolean>> closeFaucet(String deviceId, Callback<Result<Boolean>> callback) {
+        Call<Result<Boolean>> call = this.service.openOrCloseFaucet(deviceId, "close");
+        call.enqueue(callback);
+        return call;
+    }
+
+
+    }

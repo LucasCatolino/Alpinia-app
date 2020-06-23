@@ -1,5 +1,7 @@
 package com.example.Alpinia;
 
+import com.example.Alpinia.faucet.FaucetState;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -48,5 +50,16 @@ public interface ApiService {
     @GET("devices/{deviceId}/state")
     Call<Result<DeviceState>> getDeviceState(@Path("deviceId") String deviceId);
 
+
+
+
+    ////////////// FAUCET CONTROLS ////////////////////
+
+    @GET("devices/{deviceId}/state")
+    Call<Result<FaucetState>> getFaucetState(@Path("deviceId") String deviceId);
+
+    @PUT("devices/{deviceId}/{actionName}")
+    @Headers("Content-Type: application/json")
+    Call<Result<Boolean>> openOrCloseFaucet(@Path("deviceId") String deviceId, @Path("actionName") String actionName);
 
 }
