@@ -46,7 +46,6 @@ public class HomesActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v){
                     createHome();
-                    getHomes();
                 }
             });
         }
@@ -89,6 +88,7 @@ public class HomesActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Result<Home> result = response.body();
                     if (result != null) {
+                        getHomes();
                         home.setId(result.getResult().getId());
                     }
                 } else {

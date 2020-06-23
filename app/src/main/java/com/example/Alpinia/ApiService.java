@@ -49,9 +49,17 @@ public interface ApiService {
     @GET("rooms")
     Call<Result<List<Room>>> getRooms();
 
+    @GET("homes/{homeId}/rooms")
+    Call<Result<List<Room>>> getHomeRooms(@Path("homeId") String homeId);
+
+    @POST("homes/{homeId}/rooms/{roomId}")
+    @Headers("Content-Type: application/json")
+    Call<Result<Boolean>> addRoomToHome(@Path("homeId")String homeId,@Path("roomId") String roomId);
+
     //DEVICES
     @POST("devices")
     @Headers("Content-Type: application/json")
     Call<Result<Device>> addDevice(@Body Device device);
+
 
 }

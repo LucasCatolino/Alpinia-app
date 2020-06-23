@@ -10,6 +10,7 @@ import retrofit2.Callback;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Path;
 
 public class ApiClient {
     private Retrofit retrofit = null;
@@ -92,6 +93,19 @@ public class ApiClient {
         call.enqueue(callback);
         return call;
     }
+
+    public Call<Result<List<Room>>> getHomeRooms(String homeId, Callback<Result<List<Room>>> callback) {
+        Call<Result<List<Room>>> call = this.service.getHomeRooms(homeId);
+        call.enqueue(callback);
+        return call;
+    }
+
+    public Call<Result<Boolean>> addRoomToHome(String homeId,  String roomId, Callback<Result<Boolean>> callback){
+
+        Call<Result<Boolean>> call = this.service.addRoomToHome(homeId, roomId);
+        call.enqueue(callback);
+        return call;
+    };
 
 
 

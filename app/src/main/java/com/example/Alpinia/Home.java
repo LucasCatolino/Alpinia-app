@@ -3,6 +3,8 @@ package com.example.Alpinia;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Home {
 
     @SerializedName("id")
@@ -14,6 +16,10 @@ public class Home {
     @SerializedName("meta")
     @Expose
     private Meta meta;
+
+    @SerializedName("rooms")
+    @Expose
+    private List<Room> roomList;
 
     public Home(String name) {
         this.name = name;
@@ -43,4 +49,11 @@ public class Home {
         this.meta = meta;
     }
 
+    public List<Room> getRoomList() {
+        return roomList;
+    }
+
+    public void setRoomList(List<Room> roomList) {
+        this.roomList = roomList;
+    }
 }

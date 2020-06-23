@@ -6,6 +6,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Room {
+    @SerializedName("home")
+    @Expose
+    private Home home;
 
     @SerializedName("id")
     @Expose
@@ -22,19 +25,12 @@ public class Room {
     private List<Device> deviceList;
 
 
-    public Room() {
-    }
 
     public Room(String name, RoomMeta meta) {
         this.name = name;
         this.meta = meta;
     }
 
-    public Room(String id, String name, RoomMeta meta) {
-        this.id = id;
-        this.name = name;
-        this.meta = meta;
-    }
 
     public String getId() {
         return id;
@@ -76,5 +72,21 @@ public class Room {
             else
                 return this.getName();
         }
+    }
+
+    public Home getHome() {
+        return home;
+    }
+
+    public void setHome(Home home) {
+        this.home = home;
+    }
+
+    public List<Device> getDeviceList() {
+        return deviceList;
+    }
+
+    public void setDeviceList(List<Device> deviceList) {
+        this.deviceList = deviceList;
     }
 }

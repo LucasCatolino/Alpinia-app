@@ -2,6 +2,7 @@ package com.example.Alpinia;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,14 @@ public class HomesAdapter extends RecyclerView.Adapter<HomesAdapter.HomeViewHold
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
         holder.name.setText(homes.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("homeId",homes.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
